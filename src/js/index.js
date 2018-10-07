@@ -39,7 +39,6 @@
         render(arr);
         // 渲染li
         function render(arr) {
-            console.log(arr);
             var html = "";
             arr.forEach(function(fil) {
                 html += `<h2>${fil.title}</h2><li><ul>`;
@@ -49,6 +48,19 @@
                 html += `</ul></li>`;
             })
             $("ol").append(html);
+
+            // 渲染右边的li
+            var lis = "";
+            arr.forEach(function(fil) {
+                lis += `<li>${fil.title}</li>`;
+            })
+            $(".uls").append(lis);
         }
     }
+    // 点击右边的li跳转
+    $(".uls").on("click", "li", function() {
+        var index = $(this).index();
+        console.log(index);
+        better.scrollToElement($(".ols").find("h2").eq(index)[0]);
+    })
 }))

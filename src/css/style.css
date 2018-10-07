@@ -39,3 +39,17 @@ h2 {
     box-sizing: border-box;
     line-height: 44px;
 }
+
+.uls {
+    background: #999;
+    position: fixed;
+    right: 2%;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    z-index: 99;
+}
+
+.uls>li {
+    width: 100%;
+    height: 30px;
+}
